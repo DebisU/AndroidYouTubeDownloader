@@ -30,6 +30,4 @@ class YoutubeUrlOperations {
         youtubeUrlFull = fullYoutubePath
         getYoutubeSufixFromYoutubeFullUrl()
     }
-
-
 }

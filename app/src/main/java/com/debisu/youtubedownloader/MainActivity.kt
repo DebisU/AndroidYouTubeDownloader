@@ -41,7 +41,7 @@ class MainActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener 
     }
 
     override fun onInitializationSuccess(provider: Provider, player: YouTubePlayer, wasRestored: Boolean) {
-//        myYoutubePlayer?.changePlayerVideo(player,wasRestored)
+        //myYoutubePlayer?.changePlayerVideo(player,wasRestored)
         myYoutubePlayer = MyYouTubePlayer(provider,player,wasRestored)
         changePlayerVideo(player,wasRestored)
     }
@@ -90,8 +90,8 @@ class MainActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener 
         etYoutubeUrl?.setOnEditorActionListener() { v, actionId, event ->
             if(actionId == EditorInfo.IME_ACTION_SEARCH ||
                     actionId == EditorInfo.IME_ACTION_DONE ||
-                    event.getAction() == KeyEvent.ACTION_DOWN &&
-                    event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                    event.action == KeyEvent.ACTION_DOWN &&
+                    event.keyCode == KeyEvent.KEYCODE_ENTER) {
 
                 changeVideoAfterTippyng()
 
@@ -111,6 +111,11 @@ class MainActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener 
         changePlayerVideo(
                 myYoutubePlayer!!.player!!,
                 myYoutubePlayer!!.wasRestored!!)
+    }
+
+    private fun downloadVideo(){
+        //var extractor = YouTubeExtractor
+        //var extraction = extractor.extract("").blockingGet()
     }
 
     private fun changePlayerVideo(player: YouTubePlayer, wasRestored: Boolean){

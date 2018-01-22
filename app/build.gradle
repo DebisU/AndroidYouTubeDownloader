@@ -32,5 +32,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
     compile files('libs/YouTubeAndroidPlayerApi.jar')
+    compile group: 'com.squareup.moshi', name: 'moshi', version: '1.5.0'
+    compile group: 'org.mozilla', name: 'rhino', version: '1.7R4'
+    compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.2.0'
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.7.2'
+
+    api "io.reactivex.rxjava2:rxjava:2.1.7"
+    api 'com.grack:nanojson:1.1'
 
 }

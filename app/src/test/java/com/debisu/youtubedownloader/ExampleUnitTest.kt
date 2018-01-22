@@ -1,5 +1,7 @@
 package com.debisu.youtubedownloader
 
+import com.commit451.youtubeextractor.YouTubeExtractor
+import org.junit.Assert
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -11,7 +13,12 @@ import org.junit.Assert.*
  */
 class ExampleUnitTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun testExtraction() {
+        val GRID_YOUTUBE_ID = "https://www.youtube.com/watch?v=5G7mPpiL0KU"
+        val extractor = YouTubeExtractor.create()
+        val result = extractor.extract(GRID_YOUTUBE_ID)
+                .blockingGet()
+        Assert.assertNotNull(result)
+        Assert.assertTrue(result.videoStreams.isNotEmpty())
     }
 }
